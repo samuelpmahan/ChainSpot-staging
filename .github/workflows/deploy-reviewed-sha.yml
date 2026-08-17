@@ -1,5 +1,6 @@
 name: Deploy reviewed ChainSpot SHA
 
+# Manual acceptance target for the exact reviewed ChainSpot source revision.
 on:
   workflow_dispatch:
     inputs:
