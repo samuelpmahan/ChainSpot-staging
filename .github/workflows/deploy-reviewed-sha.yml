@@ -88,6 +88,7 @@ jobs:
         working-directory: source
         env:
           BASE_PATH: /ChainSpot-staging
+          PUBLIC_GOOGLE_MAPS_API_KEY: ${{ secrets.GOOGLE_MAPS_API_KEY }}
         run: npm run build
 
       - name: Configure Pages
