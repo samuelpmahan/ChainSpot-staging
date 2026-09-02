@@ -60,6 +60,17 @@ jobs:
           path: source
           fetch-depth: 1
 
+      - name: Check out frozen PCR specimen
+        uses: actions/checkout@v4
+        with:
+          repository: samuelpmahan/chainspot-corpus
+          ref: 2b5913d3f1f6d8f97b0324721a4c5201bd3ed819
+          path: chainspot-corpus
+          lfs: true
+          sparse-checkout: |
+            dev/DashsTrack/DashsTrack-full.jpg
+          sparse-checkout-cone-mode: false
+
       - name: Record exact source SHA
         id: source
         working-directory: source
@@ -89,7 +100,7 @@ jobs:
         env:
           BASE_PATH: /ChainSpot-staging
           PUBLIC_GOOGLE_MAPS_API_KEY: ${{ secrets.GOOGLE_MAPS_API_KEY }}
-        run: npm run build
+        run: npm run build:staging
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
