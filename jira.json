@@ -1,5 +1,5 @@
 {
-  "purpose": "Canonical ChainSpot sled state: calculations plus readable composition should make registration, execution, inspection and downstream handoff routine.",
+  "purpose": "Implement the accepted end-to-end S0\u2013S7 plan through pathfinding; infrastructure supports the computation.",
   "updated": "2026-09-07",
   "default_input": {
     "repo": "samuelpmahan/chainspot-corpus",
@@ -10,9 +10,10 @@
     "proof_checkpoint": "b5a6ae040147b488bc44ea94c6303296b2ecde78",
     "proof_review_branch": "review/s0-s1-mermaid-b5a6ae0",
     "proof_status": "published_unrun",
-    "research_status": "three_source_reports_synthesized_no_new_runs",
+    "research_status": "source_reports_synthesized_with_actual_routing_followup",
     "implementation_started_by_this_pass": false,
-    "stage_promotions": []
+    "stage_promotions": [],
+    "planning_status": "complete_flow_accepted"
   },
   "reports": [
     "research/2026-09-07/s0-s2-infrastructure.md",
@@ -28,7 +29,8 @@
     "Ordinary bounded loops stay in named composite functions; shared machinery records named child invocations.",
     "Outputs can be ordinary objects; domain states need faithful presentation, not a universal schema.",
     "Exact source checkpoint and policy selection precede any historical algorithm port.",
-    "Useful checkpoints carry invocation, material, gaps and pushed Git handoff."
+    "Useful checkpoints carry invocation, material, gaps and pushed Git handoff.",
+    "PLAN.md is the accepted end-to-end scope; the older infrastructure-only synthesis is historical. Later stages are planned deliverables, not optional kit pilots."
   ],
   "parallel_start": [
     "PCR-001",
@@ -50,11 +52,9 @@
     ]
   },
   "decisions_for_sam": [
-    "Accept actual Dash run/render and revised checklist.",
-    "Choose exact S1 landing checkpoint and target branch.",
-    "Select compatible visible/recovery/geometry source variants before algorithm ports; G/P/S numbers are not automatic mappings.",
-    "Choose candidate-edge/assignment policy before PCR-014; this infra plan does not select algorithms.",
-    "If later legacy consumers need S3 tees, select fill-consistent vs clean family behavior and preserve cropped/original coordinate mapping; do not silently merge these variants."
+    "Review actual material and meaningful semantic changes as stages progress.",
+    "Choose the exact accepted checkpoint and target when landing.",
+    "Resolve source-policy tradeoffs only when code/evidence cannot determine a behavior-preserving choice."
   ],
   "deferred_infrastructure": [
     "Graph-level foreach/branch/convergence syntax unless a concrete pilot requires it.",
@@ -449,10 +449,10 @@
     },
     {
       "id": "PCR-011",
-      "title": "Use one existing visible-tee pipeline as the authoring pilot",
-      "kind": "pilot",
-      "lane": "Algorithm pilot",
-      "status": "source_selection_pending",
+      "title": "Implement S3 visible-tee composition and handoff",
+      "kind": "stage",
+      "lane": "S3",
+      "status": "planned",
       "depends_on": [
         "PCR-005",
         "PCR-006",
@@ -491,10 +491,10 @@
     },
     {
       "id": "PCR-012",
-      "title": "Exercise nested tracing with recovery and association evidence",
-      "kind": "pilot",
-      "lane": "Algorithm pilot",
-      "status": "source_selection_pending",
+      "title": "Implement S4 association and constrained recovery",
+      "kind": "stage",
+      "lane": "S4",
+      "status": "planned",
       "depends_on": [
         "PCR-003",
         "PCR-006",
@@ -526,10 +526,10 @@
     },
     {
       "id": "PCR-013",
-      "title": "Exercise composite outputs with straight-geometry inventory",
-      "kind": "pilot",
-      "lane": "Algorithm pilot",
-      "status": "source_selection_pending",
+      "title": "Implement S5 straight/bent/unknown decisions",
+      "kind": "stage",
+      "lane": "S5",
+      "status": "planned",
       "depends_on": [
         "PCR-006",
         "PCR-008"
@@ -546,10 +546,11 @@
           ]
         }
       ],
-      "work": "Use existing measureStraightGeometry definitions over identified endpoint candidates. Publish composite proposals/rejected/unknown/measurements; use explicit extraction only when independently addressable children are needed. Preserve blind ABSTAIN semantics; select source policy with Sam before changing decisions.",
+      "work": "Use existing measureStraightGeometry definitions over identified endpoint candidates. Publish composite proposals/rejected/unknown/measurements; use explicit extraction only when independently addressable children are needed. Preserve blind ABSTAIN semantics; select source policy with Sam before changing decisions. Split raw geometry from the explicit straight/bent/unknown decision Calculation. Preserve blind ABSTAIN in the historical measurement reference; do not silently equate it with the new classification. Resolve decision policy with observed material and Sam if meaning remains ambiguous.",
       "acceptance": [
         "Every eligible input has an outcome; missing/degenerate geometry remains unknown.",
-        "One composite value direct-feeds children and publishes through declared outputs; downstream never depends on RunRecord position."
+        "One composite value direct-feeds children and publishes through declared outputs; downstream never depends on RunRecord position.",
+        "Render straight, bent and insufficient-evidence cases with the actual measurements and policy used."
       ],
       "falsifier": "A score is promoted into identity/ownership or a consumer must inspect interpreter-private output fields.",
       "implementation_checkpoint": null,
@@ -558,12 +559,12 @@
     },
     {
       "id": "PCR-014",
-      "title": "Exercise whole-set assignment with candidate-matrix testimony",
-      "kind": "pilot",
-      "lane": "Algorithm pilot",
-      "status": "source_selection_pending",
+      "title": "Resolve competing endpoint assignments from retained candidates",
+      "kind": "stage",
+      "lane": "S6/S7",
+      "status": "planned",
       "depends_on": [
-        "PCR-013",
+        "PCR-021",
         "PCR-010"
       ],
       "owns": [
@@ -585,7 +586,7 @@
           ]
         }
       ],
-      "work": "Older P5/P6 are pattern references, not automatic ports. Select candidate-edge policy first. Keep matrix construction/solver in named composite functions and expose allowed edges, locks, rejected solver choices and unresolved rows.",
+      "work": "Older P5/P6 are reusable pattern references. Preserve the chosen candidate-edge meaning and document any semantic change. Keep matrix construction/solver in named composite functions and expose allowed edges, locks, rejected solver choices and unresolved rows. Strong local S6 decisions constrain arbitration when available. Keep conflict/unresolved records and allow bounded re-evaluation from new path evidence.",
       "acceptance": [
         "No solver-created candidate edge or duplicated accepted ownership.",
         "Forbidden/sentinel result becomes unresolved with reason; matrix source and selected pairs are inspectable."
@@ -597,8 +598,8 @@
     },
     {
       "id": "PCR-015",
-      "title": "Use bounded two-cycle refinement to test explicit intermediate reuse",
-      "kind": "pilot",
+      "title": "Optional bounded two-cycle path/assignment refinement",
+      "kind": "optional_refinement",
       "lane": "Later pilot",
       "status": "deferred",
       "depends_on": [
@@ -625,6 +626,286 @@
       "implementation_checkpoint": null,
       "refine_checkpoint": null,
       "accepted_checkpoint": null
+    },
+    {
+      "id": "PCR-016",
+      "title": "Complete S2 readable composition and basket endpoint handoff",
+      "kind": "stage",
+      "lane": "S2",
+      "status": "planned",
+      "depends_on": [
+        "PCR-005",
+        "PCR-008"
+      ],
+      "owns": [
+        "selected S2/exp composition and calculation modules"
+      ],
+      "sources": [
+        {
+          "repo": "samuelpmahan/ChainSpot",
+          "commit": "fa44a4505d9aafbf6d2d21a12400298edb7fa96d",
+          "paths": [
+            "packages/alg/src/stages/S2/clean/Basket.ts",
+            "packages/alg/src/stages/S2/clean/index.ts"
+          ]
+        }
+      ],
+      "work": "Translate existing family/shell/pixel sequence through the kit, publish exact basket pixels and endpoint geometry with incomplete/rejected material. Keep detector semantics and actual child calls.",
+      "acceptance": [
+        "Render family, shell, exact pixels and tips; show consumers receive those outputs."
+      ],
+      "falsifier": "Basket bbox becomes ownership or endpoint geometry is silently guessed by the viewer.",
+      "implementation_checkpoint": null,
+      "refine_checkpoint": null,
+      "accepted_checkpoint": null
+    },
+    {
+      "id": "PCR-017",
+      "title": "Resolve supported straight holes locally",
+      "kind": "stage",
+      "lane": "S6",
+      "status": "planned",
+      "depends_on": [
+        "PCR-013",
+        "PCR-016"
+      ],
+      "owns": [
+        "selected S6/exp local straight-resolution calculation/composition"
+      ],
+      "sources": [
+        {
+          "repo": "samuelpmahan/ChainSpot",
+          "commit": "fa44a4505d9aafbf6d2d21a12400298edb7fa96d",
+          "paths": [
+            "packages/alg/src/detectors/threeFactor/features/st.straightTest.ts",
+            "packages/alg/src/detectors/threeFactor/assignment.ts"
+          ]
+        }
+      ],
+      "work": "Evaluate retained basket candidates against established tee\u2013badge direction and straightness measurements. Keep supported local relationships and unresolved conflicts. Allow path evidence to re-evaluate affected candidates without waiting for all holes.",
+      "acceptance": [
+        "Show supported straight-hole endpoint choices, alternatives and unresolved cases.",
+        "Trace every decision to geometry/path material and explicit decision arguments."
+      ],
+      "falsifier": "All holes are force-assigned or local progress waits for global perfection.",
+      "implementation_checkpoint": null,
+      "refine_checkpoint": null,
+      "accepted_checkpoint": null
+    },
+    {
+      "id": "PCR-018",
+      "title": "Build and expose the path-support field",
+      "kind": "stage",
+      "lane": "S7 support",
+      "status": "planned",
+      "depends_on": [
+        "PCR-001"
+      ],
+      "owns": [
+        "selected path-support experimental module and composition"
+      ],
+      "sources": [
+        {
+          "repo": "samuelpmahan/ChainSpot",
+          "commit": "fa44a4505d9aafbf6d2d21a12400298edb7fa96d",
+          "paths": [
+            "packages/alg/src/detectors/threeFactor/ribbon.ts"
+          ]
+        }
+      ],
+      "work": "Wrap/reuse computeRibbonSupport over canonical pixels; expose support, preferred direction, scale/frame and actual args. Preserve raw field so newer Dash support variants can be compared at this boundary. Can proceed using existing canonical fixture independently of later Stage ports.",
+      "acceptance": [
+        "Render support/direction over the same canonical image.",
+        "Two consumers reuse the same published field with source and arguments recorded."
+      ],
+      "falsifier": "Support is recomputed secretly by the viewer or has ambiguous scale/origin.",
+      "implementation_checkpoint": null,
+      "refine_checkpoint": null,
+      "accepted_checkpoint": null
+    },
+    {
+      "id": "PCR-019",
+      "title": "Expose occlusion-derived support and traversal cost",
+      "kind": "stage",
+      "lane": "S7 cost",
+      "status": "planned",
+      "depends_on": [
+        "PCR-018"
+      ],
+      "owns": [
+        "selected path occlusion/cost calculation modules"
+      ],
+      "sources": [
+        {
+          "repo": "samuelpmahan/ChainSpot",
+          "commit": "fa44a4505d9aafbf6d2d21a12400298edb7fa96d",
+          "paths": [
+            "packages/alg/src/detectors/threeFactor/ribbon.ts",
+            "packages/alg/src/detectors/threeFactor/routing.ts"
+          ]
+        }
+      ],
+      "work": "Make patchBadgeOcclusion behavior an explicit derived field with changed-cell testimony; retain original support. BuildSupportCost maps selected support to cost. Keep badge assumptions separate from visible evidence and basket ink ownership.",
+      "acceptance": [
+        "Show raw support, derived occlusion cells and cost with arguments.",
+        "Original field remains unchanged; inferred continuation is labeled."
+      ],
+      "falsifier": "A hidden mutation changes source support or unsupported continuation is presented as observed pixels.",
+      "implementation_checkpoint": null,
+      "refine_checkpoint": null,
+      "accepted_checkpoint": null
+    },
+    {
+      "id": "PCR-020",
+      "title": "Search once per anchor and reconstruct candidate legs",
+      "kind": "stage",
+      "lane": "S7 routing",
+      "status": "planned",
+      "depends_on": [
+        "PCR-019",
+        "PCR-003"
+      ],
+      "owns": [
+        "selected routing composition and wrappers around routing.ts"
+      ],
+      "sources": [
+        {
+          "repo": "samuelpmahan/ChainSpot",
+          "commit": "fa44a4505d9aafbf6d2d21a12400298edb7fa96d",
+          "paths": [
+            "packages/alg/src/detectors/threeFactor/routing.ts",
+            "packages/alg/src/detectors/threeFactor/measure.ts"
+          ]
+        }
+      ],
+      "work": "Reuse routeBadgeLegs/flood/pathFor semantics: one search per badge, shared for candidate tees and baskets. Expose cost/search reuse so splitting functions does not duplicate cost construction. Keep path/frame mapping, endpoint IDs, reachability, costs and child-call testimony. Use available local anchors or explicit fixtures; do not wait for globally complete endpoints.",
+      "acceptance": [
+        "Show one actual search per badge and multiple reconstructed candidate legs.",
+        "Render reachable/unreachable/partial outcomes and confirm canonical coordinate mapping.",
+        "Bound work explicitly and retain completed material if interrupted or failed."
+      ],
+      "falsifier": "A flood is repeated per tee\u2013basket pair or reachability is mistaken for accepted identity.",
+      "implementation_checkpoint": null,
+      "refine_checkpoint": null,
+      "accepted_checkpoint": null
+    },
+    {
+      "id": "PCR-021",
+      "title": "Assemble and assess complete candidate hole paths",
+      "kind": "stage",
+      "lane": "S7 candidates",
+      "status": "planned",
+      "depends_on": [
+        "PCR-020",
+        "PCR-013"
+      ],
+      "owns": [
+        "selected candidate-path composition and scoring modules"
+      ],
+      "sources": [
+        {
+          "repo": "samuelpmahan/ChainSpot",
+          "commit": "fa44a4505d9aafbf6d2d21a12400298edb7fa96d",
+          "paths": [
+            "packages/alg/src/detectors/threeFactor/measure.ts",
+            "packages/alg/src/detectors/threeFactor/scoring.ts",
+            "packages/alg/src/detectors/threeFactor/assignment.ts"
+          ]
+        }
+      ],
+      "work": "Compose candidate tee\u2013badge\u2013basket legs using makeRawPairs/makeRawPairEvidence and explicit endpoint geometry/path measurements. Preserve path alternatives, score components and rejection/unknown reasons. Local S6 output can narrow candidates when available but is not a universal prerequisite.",
+      "acceptance": [
+        "Render competing complete/partial path hypotheses with component scores and endpoints.",
+        "A reachable but poorly supported or conflicting route remains a candidate/rejected result rather than becoming a hole fact."
+      ],
+      "falsifier": "Pair construction reruns routing or discards losing paths/reasons.",
+      "implementation_checkpoint": null,
+      "refine_checkpoint": null,
+      "accepted_checkpoint": null
+    },
+    {
+      "id": "PCR-022",
+      "title": "Deliver numbered hole paths and bounded refinement",
+      "kind": "stage",
+      "lane": "S7 handoff",
+      "status": "planned",
+      "depends_on": [
+        "PCR-014",
+        "PCR-011",
+        "PCR-012",
+        "PCR-017"
+      ],
+      "owns": [
+        "selected hole-path output/refinement composition and materialization"
+      ],
+      "sources": [
+        {
+          "repo": "samuelpmahan/ChainSpot",
+          "commit": "fa44a4505d9aafbf6d2d21a12400298edb7fa96d",
+          "paths": [
+            "packages/alg/src/detectors/threeFactor/assignment.ts",
+            "packages/alg/src/detectors/threeFactor/routing.ts"
+          ]
+        }
+      ],
+      "work": "Publish numbered holes with tee geometry, basket endpoint, selected path, provenance and observed/inferred/unknown sections. Preserve supported locks; feed new route evidence back only to affected unresolved candidates with a recorded stop condition. Refine geometric path quality without fabricating evidence; two-cycle swaps remain optional PCR-015.",
+      "acceptance": [
+        "Render numbered hole paths, unresolved sections and alternatives on Dash.",
+        "Every accepted connection traces to endpoint and route material; every input hole has an explicit outcome.",
+        "Return pushed checkpoint, invocation, images, gaps and stage wiring checklist suitable for fresh-context Refine."
+      ],
+      "falsifier": "Retry-until-18, silent reassignment of accepted anchors, or fabricated line segments presented as observed path.",
+      "implementation_checkpoint": null,
+      "refine_checkpoint": null,
+      "accepted_checkpoint": null
     }
-  ]
+  ],
+  "plan": {
+    "path": "PLAN.md",
+    "status": "accepted",
+    "accepted_on": "2026-09-07",
+    "scope": "S0 intake through S7 pathfinding and hole paths",
+    "revision_rule": "Record refinements explicitly; do not silently drop later stages back to pilots."
+  },
+  "stage_tasks": {
+    "S0": [
+      "PCR-001",
+      "PCR-002"
+    ],
+    "S1": [
+      "PCR-001",
+      "PCR-004",
+      "PCR-005",
+      "PCR-007"
+    ],
+    "S2": [
+      "PCR-005",
+      "PCR-016"
+    ],
+    "S3": [
+      "PCR-011"
+    ],
+    "S4": [
+      "PCR-012"
+    ],
+    "S5": [
+      "PCR-013"
+    ],
+    "S6": [
+      "PCR-017",
+      "PCR-014"
+    ],
+    "S7": [
+      "PCR-018",
+      "PCR-019",
+      "PCR-020",
+      "PCR-021",
+      "PCR-014",
+      "PCR-022"
+    ],
+    "optional_refinement": [
+      "PCR-015"
+    ]
+  },
+  "parallel_path_work": "PCR-018 starts once canonical Dash material is available; PCR-020 uses available anchors or explicit fixtures. Global endpoint completeness is not a prerequisite."
 }

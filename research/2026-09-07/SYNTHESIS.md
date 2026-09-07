@@ -1,3 +1,5 @@
+> Scope superseded by the accepted [PLAN.md](../../PLAN.md). This document preserves the earlier infrastructure-first research synthesis; jira.json now covers the full S0–S7 delivery.
+
 # ChainSpot infrastructure synthesis — 2026-09-07
 
 Three Terra source-research lanes returned and were reconciled immediately with the S0/S1 prototype and existing S2. No new algorithm run, parity test or rendering was performed in this research pass. The separate Dash Refine agent's first job remains run/render, then redo the checklist with Sam.
