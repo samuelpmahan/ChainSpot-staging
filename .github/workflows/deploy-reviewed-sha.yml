@@ -100,7 +100,18 @@ jobs:
         env:
           BASE_PATH: /ChainSpot-staging
           PUBLIC_GOOGLE_MAPS_API_KEY: ${{ secrets.GOOGLE_MAPS_API_KEY }}
-        run: npm run build
+        shell: bash
+        run: |
+          npm run build
+          if [ -f build/creator-v0/index.html ]; then
+            echo "Promoting creator-v0 prototype to staging root"
+            rm -rf /tmp/chainspot-staging-root
+            mkdir -p /tmp/chainspot-staging-root
+            cp -a build/creator-v0/. /tmp/chainspot-staging-root/
+            rm -rf build
+            mkdir build
+            cp -a /tmp/chainspot-staging-root/. build/
+          fi
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
