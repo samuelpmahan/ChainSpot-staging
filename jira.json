@@ -1,0 +1,630 @@
+{
+  "purpose": "Canonical ChainSpot sled state: calculations plus readable composition should make registration, execution, inspection and downstream handoff routine.",
+  "updated": "2026-09-07",
+  "default_input": {
+    "repo": "samuelpmahan/chainspot-corpus",
+    "commit": "2b5913d3f1f6d8f97b0324721a4c5201bd3ed819",
+    "path": "dev/DashsTrack/DashsTrack-full.jpg"
+  },
+  "state": {
+    "proof_checkpoint": "b5a6ae040147b488bc44ea94c6303296b2ecde78",
+    "proof_review_branch": "review/s0-s1-mermaid-b5a6ae0",
+    "proof_status": "published_unrun",
+    "research_status": "three_source_reports_synthesized_no_new_runs",
+    "implementation_started_by_this_pass": false,
+    "stage_promotions": []
+  },
+  "reports": [
+    "research/2026-09-07/s0-s2-infrastructure.md",
+    "research/2026-09-07/visible-tees.md",
+    "research/2026-09-07/association-recovery.md",
+    "research/2026-09-07/hole-resolution-paths.md",
+    "research/2026-09-07/SYNTHESIS.md"
+  ],
+  "execution_rules": [
+    "Statuses are plans, not execution testimony.",
+    "One integration owner for shared executor/contracts/Git; disjoint experimental ownership for algorithm lanes.",
+    "No broader authoring task blocks demonstrated S1 integration landing.",
+    "Ordinary bounded loops stay in named composite functions; shared machinery records named child invocations.",
+    "Outputs can be ordinary objects; domain states need faithful presentation, not a universal schema.",
+    "Exact source checkpoint and policy selection precede any historical algorithm port.",
+    "Useful checkpoints carry invocation, material, gaps and pushed Git handoff."
+  ],
+  "parallel_start": [
+    "PCR-001",
+    "PCR-002"
+  ],
+  "parallel_after_execution_contract": {
+    "wiring": [
+      "PCR-004",
+      "PCR-005"
+    ],
+    "inspection": [
+      "PCR-006"
+    ],
+    "execution_owner_sequential": [
+      "PCR-003",
+      "PCR-008",
+      "PCR-009",
+      "PCR-010"
+    ]
+  },
+  "decisions_for_sam": [
+    "Accept actual Dash run/render and revised checklist.",
+    "Choose exact S1 landing checkpoint and target branch.",
+    "Select compatible visible/recovery/geometry source variants before algorithm ports; G/P/S numbers are not automatic mappings.",
+    "Choose candidate-edge/assignment policy before PCR-014; this infra plan does not select algorithms.",
+    "If later legacy consumers need S3 tees, select fill-consistent vs clean family behavior and preserve cropped/original coordinate mapping; do not silently merge these variants."
+  ],
+  "deferred_infrastructure": [
+    "Graph-level foreach/branch/convergence syntax unless a concrete pilot requires it.",
+    "Automatic cache/invalidation engine, scan fusion, dependency scheduler and optimizing compiler.",
+    "YAML alias shorthand beyond deterministic existing addresses/occurrences.",
+    "Product compile-away work: verify approved calculations remain browser-compatible when product integration is scheduled; no second detector implementation."
+  ],
+  "tasks": [
+    {
+      "id": "PCR-001",
+      "title": "Run/render Dash proof, then redo the checklist with Sam",
+      "kind": "proof",
+      "lane": "Dash Refine",
+      "status": "awaiting_run",
+      "depends_on": [],
+      "owns": [
+        "experiments/mermaid-s0-s1/",
+        "packages/alg/src/stages/S0/exp/mermaid-pcr/"
+      ],
+      "sources": [
+        {
+          "repo": "samuelpmahan/ChainSpot",
+          "commit": "b5a6ae040147b488bc44ea94c6303296b2ecde78",
+          "paths": [
+            "experiments/mermaid-s0-s1/HANDOFF.md",
+            "experiments/mermaid-s0-s1/run.ts"
+          ]
+        }
+      ],
+      "work": "First receiving-agent task: execute separate S0/S1 graphs on full DashsTrack, repair bounded run blockers, show actual material, then revise REFINE with Sam. No success claim from authored code.",
+      "acceptance": [
+        "Show canonical crop, badge readings and distinct owned/muted/remaining renders.",
+        "Compare canonical bytes, crop proposal, decode-once/direct identity, all 15 S1 intermediate outputs and four public outputs.",
+        "Return exact run command, source identity, failures and a pushed review checkpoint."
+      ],
+      "falsifier": "Comparison expectations or algorithm knobs are changed to manufacture parity; source is pre-cropped; masks/receipt are not shown.",
+      "implementation_checkpoint": null,
+      "refine_checkpoint": null,
+      "accepted_checkpoint": null
+    },
+    {
+      "id": "PCR-002",
+      "title": "Consolidate async/direct-result execution into shared PQL",
+      "kind": "infrastructure",
+      "lane": "Execution",
+      "status": "proposed",
+      "depends_on": [],
+      "owns": [
+        "packages/alg/src/exec/pql.ts",
+        "packages/alg/src/stages/S0/exp/mermaid-pcr/runner.ts",
+        "tests/unit/exec-pql-direct-results.test.ts"
+      ],
+      "sources": [
+        {
+          "repo": "samuelpmahan/ChainSpot",
+          "commit": "fa44a4505d9aafbf6d2d21a12400298edb7fa96d",
+          "paths": [
+            "packages/alg/src/exec/pql.ts"
+          ]
+        },
+        {
+          "repo": "samuelpmahan/ChainSpot",
+          "commit": "b5a6ae040147b488bc44ea94c6303296b2ecde78",
+          "paths": [
+            "packages/alg/src/stages/S0/exp/mermaid-pcr/compiler.ts",
+            "packages/alg/src/stages/S0/exp/mermaid-pcr/runner.ts"
+          ]
+        }
+      ],
+      "work": "Use the prototype as a migration fixture. Keep old string-address YAML valid; resolve explicit direct-result bindings, await each call, retain prefix/failure, and publish only explicit outputs. Avoid leaving two authoritative executors. Reconcile with PCR-001 findings before acceptance.",
+      "acceptance": [
+        "One shared execution path runs existing S1 YAML and separate generated S0/S1 YAML.",
+        "One async producer can feed two consumers with the same object, across Ticks in one invocation.",
+        "Repeated invocations isolate direct values; a thrown call preserves completed records and actual failing input."
+      ],
+      "falsifier": "Generated execution still requires its own production runner, redecodes an image, or loses the successful prefix.",
+      "implementation_checkpoint": null,
+      "refine_checkpoint": null,
+      "accepted_checkpoint": null
+    },
+    {
+      "id": "PCR-003",
+      "title": "Record actual nested named calls and source versions",
+      "kind": "infrastructure",
+      "lane": "Execution",
+      "status": "proposed",
+      "depends_on": [
+        "PCR-002"
+      ],
+      "owns": [
+        "packages/alg/src/exec/board.ts",
+        "packages/alg/src/exec/gateway.ts",
+        "packages/alg/src/exec/pql.ts",
+        "packages/alg/src/exec/contract.ts"
+      ],
+      "sources": [
+        {
+          "repo": "samuelpmahan/ChainSpot",
+          "commit": "fa44a4505d9aafbf6d2d21a12400298edb7fa96d",
+          "paths": [
+            "packages/alg/src/stages/S2/clean/Basket.ts",
+            "packages/alg/src/exec/board.ts",
+            "packages/alg/src/exec/gateway.ts"
+          ]
+        },
+        {
+          "repo": "samuelpmahan/ChainSpot",
+          "commit": "b9d05cdd26b352641f582c53a52d1ae2712d8271",
+          "paths": [
+            "packages/alg/src/detectors/threeFactor/features/g4.teeBadgeLock.ts"
+          ]
+        }
+      ],
+      "work": "Provide shared named-child invocation inside ordinary composite-function loops. Record parent ID, callsite/item key, occurrence order, actual fn, bindings/input references, output/publication and status. Use lightweight source/version identities and immutable input discipline; do not deep-copy all rasters. State body-hash transitive-dependency limits.",
+      "acceptance": [
+        "Basket.findPx emits one real child occurrence per basket; zero members means zero child calls.",
+        "Three keyed trace children show two endpoints and one unknown partial result; execution failure retains earlier siblings.",
+        "Address replacement cannot relabel an earlier source record; shared fork mutation is detected or explicitly prevented at the authored boundary."
+      ],
+      "falsifier": "Registration is counted as invocation, child records are manually maintained in every algorithm, or an unknown result is treated as a thrown error.",
+      "implementation_checkpoint": null,
+      "refine_checkpoint": null,
+      "accepted_checkpoint": null
+    },
+    {
+      "id": "PCR-004",
+      "title": "Select a Stage composition and return its successful board",
+      "kind": "infrastructure",
+      "lane": "Wiring",
+      "status": "proposed",
+      "depends_on": [
+        "PCR-002"
+      ],
+      "owns": [
+        "packages/alg/src/exec/stage.ts",
+        "packages/alg/src/stages/contract.ts",
+        "packages/alg/src/stages/S1/contract.ts"
+      ],
+      "sources": [
+        {
+          "repo": "samuelpmahan/ChainSpot",
+          "commit": "fa44a4505d9aafbf6d2d21a12400298edb7fa96d",
+          "paths": [
+            "packages/alg/src/exec/stage.ts",
+            "packages/alg/src/stages/S1/contract.ts"
+          ]
+        }
+      ],
+      "work": "Add one shared Stage adapter: selected composition, stage-local preparation and public-output boundary supplied once. Resolve outputs by address and return selected variant PxC to the normal pipeline. Preserve explicit failures and complete composition execution.",
+      "acceptance": [
+        "Normal entry explicitly selects YAML S1 and returns that variant board.",
+        "Missing public output or failed selection fails visibly; no silent clean fallback.",
+        "Appending a Tick does not change public output lookup."
+      ],
+      "falsifier": "Adapter passes the original board, substitutes clean after failure, or interprets the final Calculation position as the contract.",
+      "implementation_checkpoint": null,
+      "refine_checkpoint": null,
+      "accepted_checkpoint": null
+    },
+    {
+      "id": "PCR-005",
+      "title": "Bridge actual S1 material into the existing S2 consumer",
+      "kind": "infrastructure",
+      "lane": "Wiring",
+      "status": "proposed",
+      "depends_on": [
+        "PCR-004"
+      ],
+      "owns": [
+        "packages/alg/src/stages/componentPxC.ts",
+        "packages/alg/src/stages/S1/exp/component-compatibility/",
+        "packages/alg/src/stages/S2/contract.ts"
+      ],
+      "sources": [
+        {
+          "repo": "samuelpmahan/ChainSpot",
+          "commit": "fa44a4505d9aafbf6d2d21a12400298edb7fa96d",
+          "paths": [
+            "packages/alg/src/stages/componentPxC.ts",
+            "packages/alg/src/stages/S2/clean/Basket.ts",
+            "packages/alg/src/stages/S1/exp/badge-assembly/ownership.ts"
+          ]
+        }
+      ],
+      "work": "Centralize shape conversion to px.image.cropped and px.components using actual selected-run Parts. Determine whether labels/statistics can be projected faithfully; any new semantic calculation is recorded. Existing S2 consumes shared components, not badge remaining pixels. Do not silently introduce exclusion behavior.",
+      "acceptance": [
+        "S2 consumes components traceable to the chosen S1 run, without rerunning old S1 detection.",
+        "Show source-to-consumer dimensions, labels, component pixels and required statistics; identify any intentional difference.",
+        "Run the normal S0\u2192selected S1\u2192existing S2 entry and render resulting baskets."
+      ],
+      "falsifier": "A compatibility helper reruns a detector or changes masks/thresholds without an explicit calculation and behavior review.",
+      "implementation_checkpoint": null,
+      "refine_checkpoint": null,
+      "accepted_checkpoint": null
+    },
+    {
+      "id": "PCR-006",
+      "title": "Share material traversal and default inspection",
+      "kind": "infrastructure",
+      "lane": "Inspection",
+      "status": "proposed",
+      "depends_on": [
+        "PCR-002"
+      ],
+      "owns": [
+        "src/lib/parts-inspector/parts.ts",
+        "packages/alg/src/exec/render.ts",
+        "scripts/inspect-s1-parts.mjs",
+        "packages/alg/src/exec/material-traversal.ts"
+      ],
+      "sources": [
+        {
+          "repo": "samuelpmahan/ChainSpot",
+          "commit": "fa44a4505d9aafbf6d2d21a12400298edb7fa96d",
+          "paths": [
+            "src/lib/parts-inspector/parts.ts",
+            "packages/alg/src/exec/render.ts",
+            "scripts/inspect-s1-parts.mjs"
+          ]
+        },
+        {
+          "repo": "samuelpmahan/ChainSpot",
+          "commit": "b5a6ae040147b488bc44ea94c6303296b2ecde78",
+          "paths": [
+            "experiments/mermaid-s0-s1/run.ts"
+          ]
+        }
+      ],
+      "work": "Use one traversal for actual pixel-set/component/mask material, constituent objects, scalar measurements, relations and rejected/empty/unknown outcomes. Address-based inspection uses the same records as execution. Missing presentation support is explicit. Per-item diagnostic fields remain domain output, not manually authored execution tracing.",
+      "acceptance": [
+        "S1 numbers, explained pixels, extra muted pixels, full bbox query and remaining pixels keep distinct meanings.",
+        "CLI and browser inspect the same material; an appended Tick does not break object selection.",
+        "A partial recovery trace and a failed-run prefix stay visible. Run/View arguments stay separated."
+      ],
+      "falsifier": "Rendering reruns CV, mutates source Parts, hides rejected/unknown rows, or treats basket bbox as owned ink.",
+      "implementation_checkpoint": null,
+      "refine_checkpoint": null,
+      "accepted_checkpoint": null
+    },
+    {
+      "id": "PCR-007",
+      "title": "Review and land the demonstrated S1 integration checkpoint",
+      "kind": "integration",
+      "lane": "Land",
+      "status": "awaiting_dependencies",
+      "depends_on": [
+        "PCR-001",
+        "PCR-005",
+        "PCR-006"
+      ],
+      "owns": [
+        "accepted checkpoint only; target branch requires Sam selection"
+      ],
+      "sources": [
+        {
+          "repo": "samuelpmahan/ChainSpot",
+          "commit": "b5a6ae040147b488bc44ea94c6303296b2ecde78",
+          "paths": [
+            "experiments/mermaid-s0-s1/HANDOFF.md"
+          ]
+        }
+      ],
+      "work": "Materialize integrated behavior, push-review the exact checkpoint, get Sam visual acceptance and target branch, then land only that accepted revision. Authoring conveniences are not prerequisites.",
+      "acceptance": [
+        "Selected S1 runs, existing S2 uses it, actual material is inspectable.",
+        "Exact accepted SHA and target recorded; later implementation work preserved."
+      ],
+      "falsifier": "S1 landing waits on shorthand/optimizer work or is declared complete from isolated proof parity.",
+      "implementation_checkpoint": null,
+      "refine_checkpoint": null,
+      "accepted_checkpoint": null
+    },
+    {
+      "id": "PCR-008",
+      "title": "Define Calculations once and collect them stage-locally",
+      "kind": "infrastructure",
+      "lane": "Authoring",
+      "status": "proposed",
+      "depends_on": [
+        "PCR-002"
+      ],
+      "owns": [
+        "packages/alg/src/exec/calculation.ts",
+        "stage-local calculation collections",
+        "focused authoring fixture"
+      ],
+      "sources": [
+        {
+          "repo": "samuelpmahan/ChainSpot",
+          "commit": "fa44a4505d9aafbf6d2d21a12400298edb7fa96d",
+          "paths": [
+            "packages/alg/src/stages/S1/exp/badge-assembly/ownership.ts",
+            "packages/alg/src/stages/S2/clean/index.ts"
+          ]
+        }
+      ],
+      "work": "Lightweight definition infers function types and owns input names/defaults; collection derives registration. Composition owns bindings/output addresses, Stage owns required public outputs. Remove duplicated bookkeeping while keeping these distinct decisions. No comprehensive experimental runtime schemas.",
+      "acceptance": [
+        "Fresh Luna adds a meaningful Calculation and composition call without editing executor or UI files.",
+        "Resolved defaults and named inputs shown by check/explain come from the same definition used in invocation."
+      ],
+      "falsifier": "Author maintains separate registration, inspector, consumes/produces and documentation lists for one call.",
+      "implementation_checkpoint": null,
+      "refine_checkpoint": null,
+      "accepted_checkpoint": null
+    },
+    {
+      "id": "PCR-009",
+      "title": "Target experiments by occurrence and isolate their results",
+      "kind": "infrastructure",
+      "lane": "Execution",
+      "status": "proposed",
+      "depends_on": [
+        "PCR-003",
+        "PCR-008"
+      ],
+      "owns": [
+        "packages/alg/src/exec/stage.ts",
+        "packages/alg/src/exec/pql.ts",
+        "packages/alg/src/exec/comparator.ts"
+      ],
+      "sources": [
+        {
+          "repo": "samuelpmahan/ChainSpot",
+          "commit": "fa44a4505d9aafbf6d2d21a12400298edb7fa96d",
+          "paths": [
+            "packages/alg/src/exec/stage.ts",
+            "packages/alg/src/exec/pql.ts"
+          ]
+        },
+        {
+          "repo": "samuelpmahan/ChainSpot",
+          "commit": "b5a6ae040147b488bc44ea94c6303296b2ecde78",
+          "paths": [
+            "experiments/mermaid-s0-s1/S1.mmd"
+          ]
+        }
+      ],
+      "work": "Make explicit occurrence ID the unambiguous override target. Reused functions keep independent calls. Selected experiment executes its full composition. Preserve separate variant boards/results and immutable inputs; retain resolved args/source/code identity and hash limitations.",
+      "acceptance": [
+        "Override one of S1 findRelated occurrences and show the others unchanged.",
+        "Unknown/ambiguous target is rejected before execution.",
+        "Compare two variants from the same source without mutation leakage or hidden activation flags."
+      ],
+      "falsifier": "Function-address override unintentionally changes every call or previous results change after another variant runs.",
+      "implementation_checkpoint": null,
+      "refine_checkpoint": null,
+      "accepted_checkpoint": null
+    },
+    {
+      "id": "PCR-010",
+      "title": "Expose check/explain from the resolved composition and run",
+      "kind": "infrastructure",
+      "lane": "Authoring",
+      "status": "proposed",
+      "depends_on": [
+        "PCR-003",
+        "PCR-004",
+        "PCR-008"
+      ],
+      "owns": [
+        "shared check/explain surface under packages/alg/src/exec/",
+        "LAB CLI entry for that surface"
+      ],
+      "sources": [
+        {
+          "repo": "samuelpmahan/ChainSpot",
+          "commit": "fa44a4505d9aafbf6d2d21a12400298edb7fa96d",
+          "paths": [
+            "packages/alg/src/exec/pql.ts",
+            "packages/alg/src/exec/gateway.ts"
+          ]
+        },
+        {
+          "repo": "samuelpmahan/ChainSpot",
+          "commit": "b5a6ae040147b488bc44ea94c6303296b2ecde78",
+          "paths": [
+            "packages/alg/src/stages/S0/exp/mermaid-pcr/compiler.ts"
+          ]
+        }
+      ],
+      "work": "Before execution resolve functions, inputs/defaults, dependencies and public outputs. Afterwards enumerate actual PQL/Calculation calls, exact source/result references, failures and consumer boundary. Read definitions/records rather than making a second metadata registry. Keep unfamiliar values inspectable.",
+      "acceptance": [
+        "Missing input/invalid override/wrong consumer shape fails visibly; unfamiliar experimental object does not fail merely for lacking a renderer.",
+        "Runtime inventory shows actual calls in deterministic sequence, including zero child calls and prefix failure.",
+        "A source or Run Arg change is explicit in result identity; View Arg changes do not imply rerun."
+      ],
+      "falsifier": "Grep/declaration inventory is presented as execution, or compiler and inspector use independently maintained call metadata.",
+      "implementation_checkpoint": null,
+      "refine_checkpoint": null,
+      "accepted_checkpoint": null
+    },
+    {
+      "id": "PCR-011",
+      "title": "Use one existing visible-tee pipeline as the authoring pilot",
+      "kind": "pilot",
+      "lane": "Algorithm pilot",
+      "status": "source_selection_pending",
+      "depends_on": [
+        "PCR-005",
+        "PCR-006",
+        "PCR-008"
+      ],
+      "owns": [
+        "one selected S3/exp subtree including badge compatibility; no clean promotion"
+      ],
+      "sources": [
+        {
+          "repo": "samuelpmahan/ChainSpot",
+          "commit": "ac369f1e4584083d121e72211f5530a287b10da4",
+          "paths": [
+            "packages/alg/src/stages/S3/clean/index.ts",
+            "packages/alg/src/stages/S3/clean/Tee.ts"
+          ]
+        },
+        {
+          "repo": "samuelpmahan/ChainSpot",
+          "commit": "7fbd6b9225b8d182f2569cffc5cf09d3f0c0ebdf",
+          "paths": [
+            "packages/alg/src/detectors/threeFactor/features/g3.teeFamily.ts"
+          ]
+        }
+      ],
+      "work": "Select the compatible visible-tee checkpoint from visible-tees.md. Express its existing named calculations and Parts through the kit; preserve component, family, pixel, geometry and rejected-material semantics. Do not choose the newest branch merely by date. S3 currently requires old px.badges with badge.has.mute.px, not new px.badges.objects alone. Project the full badge exclusion footprint via the ownership query, not merely additional px.badges.muted. Historical G3 includes fill, original-image Y alignment, and component/recovered passthrough; clean S3 does not. Preserve this distinction and make any legacy TeeEvidence projection explicit.",
+      "acceptance": [
+        "One Terra/Luna author can wire, run, inspect and hand off the selected S3 with no executor/UI edits.",
+        "Show exact consumed S1/S2 representations and any unported behavior against the chosen source.",
+        "S3 badge exclusion uses the full declared footprint; prove a center in explained badge pixels is excluded as well as one in additional muted pixels."
+      ],
+      "falsifier": "Conversion silently substitutes a weaker detector or claims historical Gate and new Stage are equivalent. Using only additional muted pixels for S3 center exclusion also fails.",
+      "implementation_checkpoint": null,
+      "refine_checkpoint": null,
+      "accepted_checkpoint": null
+    },
+    {
+      "id": "PCR-012",
+      "title": "Exercise nested tracing with recovery and association evidence",
+      "kind": "pilot",
+      "lane": "Algorithm pilot",
+      "status": "source_selection_pending",
+      "depends_on": [
+        "PCR-003",
+        "PCR-006",
+        "PCR-008"
+      ],
+      "owns": [
+        "one recovery/association experimental subtree with separate named calculations"
+      ],
+      "sources": [
+        {
+          "repo": "samuelpmahan/ChainSpot",
+          "commit": "b9d05cdd26b352641f582c53a52d1ae2712d8271",
+          "paths": [
+            "packages/alg/src/detectors/threeFactor/features/g3.teeRecovery.ts",
+            "packages/alg/src/detectors/threeFactor/features/g4.teeBadgeLock.ts"
+          ]
+        }
+      ],
+      "work": "Choose one compatible source set. Keep global component search, constrained-fit alternatives/rejections and dedupe in ordinary composite functions. Keep association a separate decision. Use shared keyed child calls for per-lock basket traces. Domain partial/unknown is not execution failure.",
+      "acceptance": [
+        "Whole visible remnant retained after pixel-level ownership exclusion; all considered candidates have outcomes.",
+        "Ambiguous recovery has named winner/losers; association exposes one-to-one alternatives and partial basket trace.",
+        "Same components cannot win because of loop order; no bbox-as-basket-ownership."
+      ],
+      "falsifier": "A domain loop demands new graph syntax, or copying algorithm code also copies generic tracing plumbing.",
+      "implementation_checkpoint": null,
+      "refine_checkpoint": null,
+      "accepted_checkpoint": null
+    },
+    {
+      "id": "PCR-013",
+      "title": "Exercise composite outputs with straight-geometry inventory",
+      "kind": "pilot",
+      "lane": "Algorithm pilot",
+      "status": "source_selection_pending",
+      "depends_on": [
+        "PCR-006",
+        "PCR-008"
+      ],
+      "owns": [
+        "one owner-selected experimental stage subtree for geometry inventory"
+      ],
+      "sources": [
+        {
+          "repo": "samuelpmahan/ChainSpot",
+          "commit": "b9d05cdd26b352641f582c53a52d1ae2712d8271",
+          "paths": [
+            "packages/alg/src/detectors/threeFactor/features/st.straightTest.ts"
+          ]
+        }
+      ],
+      "work": "Use existing measureStraightGeometry definitions over identified endpoint candidates. Publish composite proposals/rejected/unknown/measurements; use explicit extraction only when independently addressable children are needed. Preserve blind ABSTAIN semantics; select source policy with Sam before changing decisions.",
+      "acceptance": [
+        "Every eligible input has an outcome; missing/degenerate geometry remains unknown.",
+        "One composite value direct-feeds children and publishes through declared outputs; downstream never depends on RunRecord position."
+      ],
+      "falsifier": "A score is promoted into identity/ownership or a consumer must inspect interpreter-private output fields.",
+      "implementation_checkpoint": null,
+      "refine_checkpoint": null,
+      "accepted_checkpoint": null
+    },
+    {
+      "id": "PCR-014",
+      "title": "Exercise whole-set assignment with candidate-matrix testimony",
+      "kind": "pilot",
+      "lane": "Algorithm pilot",
+      "status": "source_selection_pending",
+      "depends_on": [
+        "PCR-013",
+        "PCR-010"
+      ],
+      "owns": [
+        "one experimental assignment module and composition; exact stage mapping deferred"
+      ],
+      "sources": [
+        {
+          "repo": "samuelpmahan/ChainSpot",
+          "commit": "b1f4c833d32426d3094c93403af5055057ea63f1",
+          "paths": [
+            "src/lib/autoAnnotation/p5SparseAssignment.ts"
+          ]
+        },
+        {
+          "repo": "samuelpmahan/ChainSpot",
+          "commit": "d47af552693bfe8cc2e2efecc62e1d38a9aaebd9",
+          "paths": [
+            "src/lib/autoAnnotation/p6LowParBasketAssignment.ts"
+          ]
+        }
+      ],
+      "work": "Older P5/P6 are pattern references, not automatic ports. Select candidate-edge policy first. Keep matrix construction/solver in named composite functions and expose allowed edges, locks, rejected solver choices and unresolved rows.",
+      "acceptance": [
+        "No solver-created candidate edge or duplicated accepted ownership.",
+        "Forbidden/sentinel result becomes unresolved with reason; matrix source and selected pairs are inspectable."
+      ],
+      "falsifier": "Assignment completeness is treated as proof of physical identity or old thresholds are imported without source-policy review.",
+      "implementation_checkpoint": null,
+      "refine_checkpoint": null,
+      "accepted_checkpoint": null
+    },
+    {
+      "id": "PCR-015",
+      "title": "Use bounded two-cycle refinement to test explicit intermediate reuse",
+      "kind": "pilot",
+      "lane": "Later pilot",
+      "status": "deferred",
+      "depends_on": [
+        "PCR-014"
+      ],
+      "owns": [
+        "one experimental path adjudicator; no generic cache/scheduler changes"
+      ],
+      "sources": [
+        {
+          "repo": "samuelpmahan/ChainSpot",
+          "commit": "b8452b589621287811e413a57a493082891b0d71",
+          "paths": [
+            "src/lib/autoAnnotation/p6LowParBasketAssignment.ts"
+          ]
+        }
+      ],
+      "work": "If this historical approach is selected, pass the same caller-built RibbonMassSegmentation to both consumers. Keep finite eligible-pair enumeration, four-distance evidence gate and strongest-first non-overlap application in one named composite. Supplied experiment policy owns improvement thresholds.",
+      "acceptance": [
+        "Every applied swap has existing alternate edges, required measurements and a stated improvement rule.",
+        "Unknown distance is skipped with reason; locks and source segmentation are preserved; one hole appears in at most one applied pair."
+      ],
+      "falsifier": "This bounded case is used to justify unbounded graph control flow or opaque automatic caching.",
+      "implementation_checkpoint": null,
+      "refine_checkpoint": null,
+      "accepted_checkpoint": null
+    }
+  ]
+}
