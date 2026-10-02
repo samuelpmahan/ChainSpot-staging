@@ -13,6 +13,7 @@ on:
     paths:
       - STAGE_REF
       - .github/workflows/deploy-reviewed-sha.yml
+      - stoplight/**
 
 permissions:
   contents: read
@@ -27,7 +28,36 @@ env:
   SOURCE_REPO: samuelpmahan/ChainSpot
 
 jobs:
+  # Lane stoplight (stoplight/): runs stoplight/items.json and publishes it at /stoplight/ on this site.
+  # Delta: results whose inputs are unchanged since the published run are reused.
+  # Read-only job; it can never block or alter the ChainSpot staging build.
+  stoplight:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Run stoplight
+        env:
+          PREVIOUS_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/stoplight/stoplight.json
+        run: |
+          curl -fsSL "$PREVIOUS_URL" -o "$RUNNER_TEMP/previous-stoplight.json" || echo "No published stoplight yet; running everything."
+          STOPLIGHT_PREVIOUS="$RUNNER_TEMP/previous-stoplight.json" node --experimental-strip-types --no-warnings stoplight/run.ts | tee "$RUNNER_TEMP/stoplight.txt"
+          { echo '## Lane stoplight'; echo '```'; cat "$RUNNER_TEMP/stoplight.txt"; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: stoplight
+          path: |
+            stoplight/index.html
+            stoplight/stoplight.json
+
   build:
+    needs: stoplight
+    if: ${{ !cancelled() }}
     runs-on: ubuntu-latest
     outputs:
       source_sha: ${{ steps.source.outputs.sha }}
@@ -112,6 +142,13 @@ jobs:
             mkdir build
             cp -a /tmp/chainspot-staging-root/. build/
           fi
+
+      - name: Add stoplight page if it was produced
+        uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          name: stoplight
+          path: source/build/stoplight
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
