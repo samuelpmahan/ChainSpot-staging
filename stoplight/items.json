@@ -125,21 +125,13 @@
         {
           "id": "battery",
           "cwd": ".",
-          "cmd": "sh boone-hh-run.sh",
-          "inputs": [
-            "boone-hh",
-            "boone-hh-run.sh"
-          ]
+          "cmd": "sh boone-hh-run.sh"
         },
         {
           "id": "district-bypass-caught",
           "cwd": ".",
           "cmd": "sh boone-hh-run.sh district",
-          "expect": "fail",
-          "inputs": [
-            "boone-hh",
-            "boone-hh-run.sh"
-          ]
+          "expect": "fail"
         }
       ]
     },

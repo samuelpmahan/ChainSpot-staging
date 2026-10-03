@@ -13,7 +13,6 @@ on:
     paths:
       - STAGE_REF
       - .github/workflows/deploy-reviewed-sha.yml
-      - stoplight/**
 
 permissions:
   contents: read
@@ -31,6 +30,8 @@ jobs:
   # Lane stoplight (stoplight/): runs stoplight/items.json and publishes it at /stoplight/ on this site.
   # Delta: results whose inputs are unchanged since the published run are reused.
   # Read-only job; it can never block or alter the ChainSpot staging build.
+  # It runs only when staging deploys anyway (STAGE_REF, this workflow, or a manual dispatch):
+  # a stoplight-only push must not redeploy or cancel a staging deploy.
   stoplight:
     runs-on: ubuntu-latest
     continue-on-error: true
